@@ -1,0 +1,10 @@
+# AL / Business Central build output
+*.app
+.alpackages/
+.altemplates/
+.snapshots/
+.output/
+.vscode/rad.json
+
+# macOS
+.DS_Store
