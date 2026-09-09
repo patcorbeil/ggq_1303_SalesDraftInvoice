@@ -6,5 +6,8 @@
 .output/
 .vscode/rad.json
 
+# Generated translation source file (regenerated on every build)
+Translations/*.g.xlf
+
 # macOS
 .DS_Store

@@ -1,8 +1,12 @@
-namespace Corbeil.Sales.Reports;
+namespace GGQ.Sales.Reports;
 
 using Microsoft.Sales.Document;
 using Microsoft.Finance.GeneralLedger.Setup;
 
+/// <summary>
+/// Adds a standalone Currency Code column to report 1303 "Standard Sales - Draft Invoice"
+/// so it can be bound in a Word layout. See docs/draft-invoice-currency.md.
+/// </summary>
 reportextension 60102 "Draft Invoice Currency" extends "Standard Sales - Draft Invoice"
 {
     dataset
@@ -23,7 +27,7 @@ reportextension 60102 "Draft Invoice Currency" extends "Standard Sales - Draft I
         layout("DraftInvoiceWithCurrency.docx")
         {
             Type = Word;
-            LayoutFile = './src/DraftInvoiceWithCurrency.docx';
+            LayoutFile = './src/ReportExtensions/DraftInvoiceWithCurrency.docx';
             Caption = 'Draft Invoice with Currency (Word)';
             Summary = 'Draft invoice with currency in header and right-aligned amounts.';
         }

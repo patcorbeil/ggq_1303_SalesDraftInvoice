@@ -1,3 +1,5 @@
+> Part of the **GoGo Quinoa Customizations** app. Source: `src/ReportExtensions/RepExt60102.DraftInvoiceCurrency.al`
+
 # Add Currency Code to Draft Invoice (report 1303) Word layout
 
 ## Why this is needed
@@ -9,12 +11,12 @@ The Draft Invoice is report **1303** "Standard Sales - Draft Invoice" (1306 is t
 ## Step 1 — Deploy the extension
 1. Open this folder in VS Code with the AL Language extension.
 2. `AL: Download symbols` against your BC 28 environment.
-3. Adjust the object/ID range in `app.json` if 50100 is taken.
+3. Object ID **60102**, range 60000-60999 (see the root `README.md` object registry).
 4. `Ctrl+F5` (publish) or build the .app and upload via Extension Management.
 
 ## Step 2 — Update the Word layout
 1. In BC, search **Report Layouts**.
-2. Find report 1303, layout `StandardSalesDraftInvoice.docx` (or the one you use).
+2. Find report 1303, layout `DraftInvoiceWithCurrency.docx` (or the one you use).
 3. **Export Layout** — export AFTER installing the extension so the new columns are in the custom XML part.
 4. Open in Word. Enable the **Developer** tab (File > Options > Customize Ribbon).
 5. Developer > **XML Mapping Pane** > select the custom XML part `urn:microsoft-dynamics-nav/reports/Standard_Sales___Draft_Invoice/1303`.
@@ -27,5 +29,5 @@ The Draft Invoice is report **1303** "Standard Sales - Draft Invoice" (1306 is t
 Print/preview a draft invoice in a foreign currency (e.g. USD) and one in CAD — the field should show USD and CAD respectively.
 
 ## Notes
-- To also cover the posted invoice later, add a second `reportextension` (e.g. 50101) extending "Standard Sales - Invoice" with the same code.
+- To also cover the posted invoice later, add a second `reportextension` (next free ID in 60100-60199) extending "Standard Sales - Invoice" with the same code.
 - The content control placement is per-layout; if you maintain the Blue/Email layouts too, repeat step 2 for each.
