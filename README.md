@@ -30,6 +30,7 @@ Keep this table current — it is the fastest way to find a free ID.
 |---|---|---|---|---|
 | 60102 | reportextension | Draft Invoice Currency | Adds `CurrencyCode` to report 1303 for Word layouts | [docs](docs/draft-invoice-currency.md) |
 | 60200 | report | GGQ Item Lot Label | Item/lot label from Lot No. Information (Code128) | — |
+| 60201 | report | GGQ Receipt Label | Per-bag receiving label from a posted purchase receipt, one per lot | [docs](docs/wms-receiving-labels.md) |
 
 ## Folder layout
 

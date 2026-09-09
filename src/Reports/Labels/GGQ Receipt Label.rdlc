@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="TablixLabel">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.8in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>3.93in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="RectangleLabel">
+                          <ReportItems>
+                            <Textbox Name="TextboxItemNo">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!ItemNo.Value</Value>
+                                      <Style>
+                                        <FontSize>14pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxItemNo</rd:DefaultName>
+                              <Top>0.05in</Top>
+                              <Left>0in</Left>
+                              <Height>0.3in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="TextboxDescription">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!ItemDescription.Value</Value>
+                                      <Style>
+                                        <FontSize>10pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxDescription</rd:DefaultName>
+                              <Top>0.41in</Top>
+                              <Left>0in</Left>
+                              <Height>0.3in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="TextboxPONo">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Parameters!PONoCaption.Value &amp; ": " &amp; Fields!PONo.Value</Value>
+                                      <Style>
+                                        <FontSize>9pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxPONo</rd:DefaultName>
+                              <Top>0.77in</Top>
+                              <Left>0in</Left>
+                              <Height>0.3in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="TextboxSupplierLotNo">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Parameters!SupplierLotNoCaption.Value &amp; ": " &amp; Fields!SupplierLotNo.Value</Value>
+                                      <Style>
+                                        <FontSize>9pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxSupplierLotNo</rd:DefaultName>
+                              <Top>1.13in</Top>
+                              <Left>0in</Left>
+                              <Height>0.3in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="TextboxBestBeforeDate">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Parameters!BestBeforeDateCaption.Value &amp; ": " &amp; Fields!BestBeforeDate.Value</Value>
+                                      <Style>
+                                        <FontSize>9pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxBestBeforeDate</rd:DefaultName>
+                              <Top>1.49in</Top>
+                              <Left>0in</Left>
+                              <Height>0.3in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="TextboxReceiptDate">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Parameters!ReceiptDateCaption.Value &amp; ": " &amp; Fields!ReceiptDate.Value</Value>
+                                      <Style>
+                                        <FontSize>9pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxReceiptDate</rd:DefaultName>
+                              <Top>1.85in</Top>
+                              <Left>0in</Left>
+                              <Height>0.3in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="TextboxVendorName">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Parameters!VendorNameCaption.Value &amp; ": " &amp; Fields!VendorName.Value</Value>
+                                      <Style>
+                                        <FontSize>9pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxVendorName</rd:DefaultName>
+                              <Top>2.21in</Top>
+                              <Left>0in</Left>
+                              <Height>0.3in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="TextboxBagSummary">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!BagIndexOfTxt.Value &amp; "   " &amp; FormatNumber(Fields!BagQty.Value, 3) &amp; " " &amp; Fields!BagUOMCode.Value &amp; "   " &amp; Fields!PartialTxt.Value</Value>
+                                      <Style>
+                                        <FontSize>9pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxBagSummary</rd:DefaultName>
+                              <Top>2.57in</Top>
+                              <Left>0in</Left>
+                              <Height>0.3in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="TextboxBarcode">
+                              <CanGrow>false</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!BarcodeTxt.Value</Value>
+                                      <!-- IDAutomationC128M: confirmed via Microsoft Learn (Barcode Fonts with Business
+                         Central Online) + real-world usage report for the IDAutomation1D/Code128
+                         provider. BC online already has this font - no install needed.
+                         Kept small (10pt) with CanGrow=false: at 28pt the encoded string was wider
+                         than the 3.8in box, so it wrapped and grew past one page. -->
+                                      <Style>
+                                        <FontFamily>IDAutomationC128M</FontFamily>
+                                        <FontSize>10pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>TextboxBarcode</rd:DefaultName>
+                              <Top>2.93in</Top>
+                              <Left>0in</Left>
+                              <Height>0.5in</Height>
+                              <Width>3.8in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style />
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="GroupLabel">
+                    <GroupExpressions>
+                      <GroupExpression>=RowNumber(Nothing)</GroupExpression>
+                    </GroupExpressions>
+                    <PageBreak>
+                      <BreakLocation>Between</BreakLocation>
+                    </PageBreak>
+                  </Group>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>0in</Top>
+            <Left>0in</Left>
+            <Height>3.93in</Height>
+            <Width>3.8in</Width>
+            <Style />
+          </Tablix>
+        </ReportItems>
+        <Height>5.8in</Height>
+        <Style />
+      </Body>
+      <Width>4in</Width>
+      <Page>
+        <PageHeight>6in</PageHeight>
+        <PageWidth>4in</PageWidth>
+        <LeftMargin>0.1in</LeftMargin>
+        <RightMargin>0.1in</RightMargin>
+        <TopMargin>0.1in</TopMargin>
+        <BottomMargin>0.1in</BottomMargin>
+        <ColumnSpacing>0in</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ItemNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ItemDescriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemDescriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemDescriptionCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PONoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PONoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PONoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SupplierLotNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SupplierLotNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SupplierLotNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BestBeforeDateCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BestBeforeDateCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BestBeforeDateCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ReceiptDateCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ReceiptDateCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReceiptDateCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VendorNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VendorNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VendorNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VendorNameCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VendorNameCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VendorNameCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BagUOMCodeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BagUOMCodeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BagUOMCodeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BagIndexOfTxtCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BagIndexOfTxtCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BagIndexOfTxtCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BagQtyCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BagQtyCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BagQtyCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PartialTxtCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PartialTxtCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PartialTxtCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
+        </Field>
+        <Field Name="ItemDescription">
+          <DataField>ItemDescription</DataField>
+        </Field>
+        <Field Name="PONo">
+          <DataField>PONo</DataField>
+        </Field>
+        <Field Name="SupplierLotNo">
+          <DataField>SupplierLotNo</DataField>
+        </Field>
+        <Field Name="BestBeforeDate">
+          <DataField>BestBeforeDate</DataField>
+        </Field>
+        <Field Name="ReceiptDate">
+          <DataField>ReceiptDate</DataField>
+        </Field>
+        <Field Name="VendorNo">
+          <DataField>VendorNo</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+        <Field Name="BagUOMCode">
+          <DataField>BagUOMCode</DataField>
+        </Field>
+        <Field Name="BagIndex">
+          <DataField>BagIndex</DataField>
+        </Field>
+        <Field Name="BagCount">
+          <DataField>BagCount</DataField>
+        </Field>
+        <Field Name="BagIndexOfTxt">
+          <DataField>BagIndexOfTxt</DataField>
+        </Field>
+        <Field Name="BagQty">
+          <DataField>BagQty</DataField>
+        </Field>
+        <Field Name="BagQtyFormat">
+          <DataField>BagQtyFormat</DataField>
+        </Field>
+        <Field Name="PartialTxt">
+          <DataField>PartialTxt</DataField>
+        </Field>
+        <Field Name="BarcodeTxt">
+          <DataField>BarcodeTxt</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

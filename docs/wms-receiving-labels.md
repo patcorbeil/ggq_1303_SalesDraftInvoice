@@ -1,6 +1,6 @@
 # Warehouse receiving labels — design spec
 
-Status: **design agreed, report 60201 not yet written.**
+Status: **report 60201 AL written, no layout yet.**
 Context date: 2026-09-09.
 
 ## Goal
@@ -136,8 +136,24 @@ Existing barcode approach in this app: `Rep60200 "GGQ Item Lot Label"` uses BC's
 - Bins: if Bin Mandatory is on, the bin must be on the PO line or the handheld errors.
   Insight Works recommends inventory put-aways in that case.
 
+## Report 60201 — implementation notes
+
+`src/Reports/Labels/Rep60201.ReceiptLabel.al`. Runs off `Purch. Rcpt. Header` (request-filtered
+on `No.`; errors if no filter is set — this is a per-receipt print, not a bulk job) →
+`Purch. Rcpt. Line` (`Type = Item`) → `Item Ledger Entry` (one row per lot, per the join above)
+→ an `Integer` dataitem looped `1..NumberOfBags` for the per-bag rows. Lines with no `Lot No.`
+are skipped (nothing traceable to print).
+
+Barcode: Code128 via the same `Barcode Font Provider` interface as `Rep60200`, encoding
+`ItemNo|LotNo|BagQty` — pipe-delimited, not GS1-128. The Insight Works Barcode Rule regex
+(open item below) needs to match that exact format.
+
+No layout is bound yet — default RDLC will render until the Word/RDLC layout is designed.
+
 ## Open items
 1. Confirm BAG UOM conversions exist on the purchased items.
 2. Ask Insight Works what context a custom Item Label report receives on a qty-change print.
 3. Decide label stock size and printer model — drives Word vs RDLC layout.
-4. Write report **60201 GGQ Receipt Label** + its layout; add to `README.md` registry.
+4. Design the layout and bind it (`DefaultRenderingLayout` + `rendering` block — see the AL
+   file's TODO comment); add an Insight Works Barcode Rule for `ItemNo|LotNo|BagQty`; merge
+   the new labels into `Translations/GoGo Quinoa Customizations.fr-CA.xlf`.

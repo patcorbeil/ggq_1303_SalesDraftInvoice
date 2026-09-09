@@ -43,5 +43,7 @@ Safe while this app owns no tables. Once it does, stop and think first.
 - Bags per KG comes from `Item Unit of Measure."Qty. per Unit of Measure"`, not from the line.
 
 ## In flight
-Report **60201 GGQ Receipt Label** — not written yet. Spec:
-`docs/wms-receiving-labels.md`. Read it first.
+Report **60201 GGQ Receipt Label** — AL written (`src/Reports/Labels/Rep60201.ReceiptLabel.al`),
+no layout yet. Spec: `docs/wms-receiving-labels.md`. Remaining: label stock/printer decision
+(drives Word vs RDLC layout), Insight Works Barcode Rule for the printed barcode, French
+translations, confirm BAG UOM conversions exist on purchased items.

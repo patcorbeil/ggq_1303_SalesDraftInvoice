@@ -3,7 +3,7 @@ namespace GGQ.Inventory.Reports;
 using Microsoft.Inventory.Tracking;
 using Microsoft.Inventory.Item;
 using Microsoft.Inventory.Ledger;
-using System.Utilities;
+using System.Text;
 
 /// <summary>
 /// Item/lot identification label driven from the Lot No. Information card.
